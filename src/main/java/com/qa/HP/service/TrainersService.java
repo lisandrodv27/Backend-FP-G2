@@ -25,7 +25,7 @@ public class TrainersService {
 			
 		}
 	
-	public Trainers createTrainers(Trainers trainer) {
+		public Trainers createTrainers(Trainers trainer) {
 		return this.repo.save(trainer);
 	}
 	
