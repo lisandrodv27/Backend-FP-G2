@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import com.qa.HP.domain.Trainers;
 import com.qa.HP.service.TrainersService;
 
-
+// This class deals with requests
 public class TrainersController {
 	
 	private TrainersService service;
