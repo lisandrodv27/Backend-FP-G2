@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Trainers {
+public class Trainer {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +19,7 @@ public class Trainers {
 	private String Password;
 	
 	
-	public Trainers(String FirstName, String LastName, String Password) {
+	public Trainer(String FirstName, String LastName, String Password) {
 		super();
 		this.FirstName = FirstName;
 		this.LastName = LastName;
@@ -28,7 +28,7 @@ public class Trainers {
 	}
 	
 	// REQUIRED
-	public Trainers() { 
+	public Trainer() { 
 		super();
 
 	}

@@ -14,13 +14,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 import com.qa.HP.domain.Ticket;
-import com.qa.HP.service.TicketsService;
+import com.qa.HP.service.TicketService;
+import com.qa.HP.service.TicketService;
 
-public class TicketsController {
+public class TicketController {
 	
-	private TicketsService service;
+	private TicketService service;
 
-	private TicketsController(TicketsService service) {
+	private TicketController(TicketService service) {
 		super();
 		this.service = service;
 	}

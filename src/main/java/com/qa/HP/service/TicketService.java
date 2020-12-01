@@ -12,12 +12,12 @@ import com.qa.HP.exception.TicketNotFoundException;
 
 
 @Service
-public class TicketsService {
+public class TicketService {
 	
 	@Autowired
 	private TicketRepo repo;
 
-	private TicketsService(TicketRepo repo) {
+	private TicketService(TicketRepo repo) {
 		super();
 		this.repo = repo;
 	}

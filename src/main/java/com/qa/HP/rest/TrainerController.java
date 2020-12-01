@@ -8,29 +8,29 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.qa.HP.domain.Trainers;
-import com.qa.HP.service.TrainersService;
+import com.qa.HP.domain.Trainer;
+import com.qa.HP.service.TrainerService;
 
 // This class deals with requests
-public class TrainersController {
+public class TrainerController {
 	
-	private TrainersService service;
+	private TrainerService service;
 	
-	public TrainersController(TrainersService service) {
+	public TrainerController(TrainerService service) {
 		super();
 		this.service = service;
 	}
 	
 	//Get request
 		@GetMapping("/get")
-		public ResponseEntity<List<Trainers>> getTrainers() {
+		public ResponseEntity<List<Trainer>> getTrainer() {
 			return ResponseEntity.ok(this.service.getTrainers());
 			
 		}
 		
 		@PostMapping("/create")
-		public ResponseEntity<Trainers> createTrainers(@RequestBody Trainers trainer) {
-			return new ResponseEntity<Trainers>(this.service.createTrainers(trainer), HttpStatus.CREATED);
+		public ResponseEntity<Trainer> createTrainer(@RequestBody Trainer trainer) {
+			return new ResponseEntity<Trainer>(this.service.createTrainers(trainer), HttpStatus.CREATED);
 		}
 
 }

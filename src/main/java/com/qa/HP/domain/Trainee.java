@@ -4,7 +4,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class Trainees {
+public class Trainee {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,11 +16,11 @@ public class Trainees {
 	private String cohort;
 	private String password;
 
-	public Trainees() {
+	public Trainee() {
 		super();
 	}
 
-	public Trainees(int traineeID, String firstName, String secondName, String cohort, String password) {
+	public Trainee(int traineeID, String firstName, String secondName, String cohort, String password) {
 		super();
 		this.traineeID = traineeID;
 		this.firstName = firstName;

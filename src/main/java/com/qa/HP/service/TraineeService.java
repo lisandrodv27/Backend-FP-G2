@@ -4,24 +4,25 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.qa.HP.domain.Trainees;
-import com.qa.HP.domain.TraineesRepo;
+import com.qa.HP.domain.TraineeRepo;
+import com.qa.HP.domain.Trainee;
+import com.qa.HP.domain.TraineeRepo;
 
-public class TraineesService {
+public class TraineeService {
 	
 	@Autowired
-	private TraineesRepo repo;
+	private TraineeRepo repo;
 
-	private TraineesService(TraineesRepo repo) {
+	private TraineeService(TraineeRepo repo) {
 		super();
 		this.repo = repo;
 	}
 
-	public List<Trainees> getTrainee() {
+	public List<Trainee> getTrainee() {
 		return this.repo.findAll();
 	}
 
-	public Trainees createTrainee(Trainees trainee) {
+	public Trainee createTrainee(Trainee trainee) {
 		return this.repo.save(trainee);
 	}
 
