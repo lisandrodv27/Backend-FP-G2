@@ -21,17 +21,17 @@ public class TraineeController {
 	}
 
 	//Create a trainee- signing up
-	@PostMapping("/create")
+	@PostMapping("/trainee/create")
 	public ResponseEntity<Trainee> createTrainee(@RequestBody Trainee trainee) {
 		return new ResponseEntity<Trainee>(this.service.createTrainee(trainee), HttpStatus.CREATED);
 	}
 	//Get trainee name when signing in
-	@GetMapping("/get")
+	@GetMapping("/trainee/getAll")
 	public ResponseEntity<List<Trainee>> getTrainee() {
 		return ResponseEntity.ok(this.service.getTrainee());
 	}
 
-	//@PutMapping("/update")
+	//@PutMapping("/trainee/update")
 	//public ResponseEntity<Trainee> updateTicket(@RequestBody Trainee trainee, @PathParam("id") Long id) {
 	//	return new ResponseEntity<Trainee>(this.service.updateTrainee(trainee, id), HttpStatus.ACCEPTED);
 	//}

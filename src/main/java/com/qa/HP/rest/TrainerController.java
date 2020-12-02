@@ -22,13 +22,13 @@ public class TrainerController {
 	}
 	
 	//Get request
-		@GetMapping("/get")
+		@GetMapping("/trainer/getAll")
 		public ResponseEntity<List<Trainer>> getTrainer() {
 			return ResponseEntity.ok(this.service.getTrainers());
 			
 		}
 		
-		@PostMapping("/create")
+		@PostMapping("/trainer/create")
 		public ResponseEntity<Trainer> createTrainer(@RequestBody Trainer trainer) {
 			return new ResponseEntity<Trainer>(this.service.createTrainers(trainer), HttpStatus.CREATED);
 		}

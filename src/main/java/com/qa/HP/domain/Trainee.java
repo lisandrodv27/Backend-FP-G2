@@ -1,16 +1,18 @@
 package com.qa.HP.domain;
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+@Entity
 public class Trainee {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	private int traineeID;
+	private int username;
 	private String firstName;
 	private String secondName;
 	private String cohort;
@@ -20,23 +22,31 @@ public class Trainee {
 		super();
 	}
 
-	public Trainee(int traineeID, String firstName, String secondName, String cohort, String password) {
+	public Trainee(int username, String firstName, String secondName, String cohort, String password) {
 		super();
-		this.traineeID = traineeID;
+		this.username = username;
 		this.firstName = firstName;
 		this.secondName = secondName;
 		this.cohort = cohort;
 		this.password = password;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
-	
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	
+
+	public int getUsername() {
+		return username;
+	}
+
+	public void setUsername(int username) {
+		this.username = username;
+	}
+
 	public String getFirstName() {
 		return firstName;
 	}
@@ -47,6 +57,14 @@ public class Trainee {
 
 	public String getSecondName() {
 		return secondName;
+	}
+
+	public void setSecondName(String secondName) {
+		this.secondName = secondName;
+	}
+
+	public String getCohort() {
+		return cohort;
 	}
 
 	public void setCohort(String cohort) {
@@ -60,7 +78,7 @@ public class Trainee {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
+	
 	// needs Hashcode and equals override for testing
 
 }

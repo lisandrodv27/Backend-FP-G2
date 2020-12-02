@@ -26,17 +26,17 @@ public class TicketController {
 		this.service = service;
 	}
 
-	@PostMapping("/create")
+	@PostMapping("/ticket/create")
 	public ResponseEntity<Ticket> createTicket(@RequestBody Ticket ticket) {
 		return new ResponseEntity<Ticket>(this.service.createTicket(ticket), HttpStatus.CREATED);
 	}
 
-	@GetMapping("/get")
+	@GetMapping("/ticket/getAll")
 	public ResponseEntity<List<Ticket>> getTicket() {
 		return ResponseEntity.ok(this.service.getTicket());
 	}
 
-	@DeleteMapping("/remove/{id}")
+	@DeleteMapping("/ticket/remove/{id}")
 	public ResponseEntity<Object> deleteTicket(@PathVariable Long id) {
 		if (this.service.deleteTicket(id)) {
 			return new ResponseEntity<>(HttpStatus.OK);
@@ -45,7 +45,7 @@ public class TicketController {
 		}
 	}
 
-	@PutMapping("/update")
+	@PutMapping("/ticket/update")
 	public ResponseEntity<Ticket> updateTicket(@RequestBody Ticket ticket, @PathParam("id") Long id) {
 		return new ResponseEntity<Ticket>(this.service.updateTicket(ticket, id), HttpStatus.ACCEPTED);
 	}
