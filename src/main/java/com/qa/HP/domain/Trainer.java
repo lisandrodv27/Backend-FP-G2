@@ -12,27 +12,28 @@ public class Trainer {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
+	private String username;
 	private String firstName;
 	private String lastName;
 	private String password;
 	
 	
-	public Trainer(String firstName, String lastName, String password) {
+	public Trainer(String username, String firstName, String lastName, String password) {
 		super();
+		this.username = username;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.password = password;
 		
 	}
 	
-	// REQUIRED
 	public Trainer() { 
 		super();
 
 	}
 	@Override
 	public String toString() {
-		return "Trainers [id=" + id + ", FirstName=" + firstName + ", lastName=" + lastName + ", password=" + password + "]";
+		return "Trainers [id=" + id + ", username=" + username + "firstName=" + firstName + ", lastName=" + lastName + ", password=" + password + "]";
 	}
 
 	public Long getId() {
@@ -41,6 +42,14 @@ public class Trainer {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public String getUsername() {
+		return username;
+	}
+	
+	public void setUsername(String username ) {
+		this.username = username;
 	}
 
 	public String getFirstName() {

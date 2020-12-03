@@ -20,12 +20,12 @@ public class TrainerService {
 	}
 	
 	//Get request
-		public List<Trainer> getTrainers() {
+		public List<Trainer> getTrainer() {
 			return this.repo.findAll();
 			
 		}
 	
-		public Trainer createTrainers(Trainer trainer) {
+		public Trainer createTrainer(Trainer trainer) {
 		return this.repo.save(trainer);
 	}
 	

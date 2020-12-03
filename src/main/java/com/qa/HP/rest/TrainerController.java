@@ -22,15 +22,14 @@ public class TrainerController {
 	}
 	
 	//Get request
-		@GetMapping("/trainer/getAll")
-		public ResponseEntity<List<Trainer>> getTrainer() {
-			return ResponseEntity.ok(this.service.getTrainers());
-			
-		}
+	@GetMapping("/trainer/getAll")
+	public ResponseEntity<List<Trainer>> getTrainer() {
+		return ResponseEntity.ok(this.service.getTrainer());
+	}
 		
-		@PostMapping("/trainer/create")
-		public ResponseEntity<Trainer> createTrainer(@RequestBody Trainer trainer) {
-			return new ResponseEntity<Trainer>(this.service.createTrainers(trainer), HttpStatus.CREATED);
-		}
+	@PostMapping("/trainer/create")
+	public ResponseEntity<Trainer> createTrainer(@RequestBody Trainer trainer) {
+		return new ResponseEntity<Trainer>(this.service.createTrainer(trainer), HttpStatus.CREATED);
+	}
 
 }
