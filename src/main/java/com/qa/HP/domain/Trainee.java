@@ -10,7 +10,7 @@ public class Trainee {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long traineeId;
 
 	private int username;
 	private String firstName;
@@ -31,12 +31,12 @@ public class Trainee {
 		this.password = password;
 	}
 
-	public Long getId() {
-		return id;
+	public Long getTraineeId() {
+		return traineeId;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setTraineeId(Long id) {
+		this.traineeId = id;
 	}
 
 	public int getUsername() {

@@ -5,12 +5,19 @@ import java.util.List;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
+import com.qa.HP.domain.Ticket;
 import com.qa.HP.domain.Trainee;
+import com.qa.HP.domain.Trainer;
 import com.qa.HP.service.TraineeService;
 
+@RestController
+@RequestMapping("/trainee")
 public class TraineeController {
 	
 	private TraineeService service;
@@ -20,19 +27,28 @@ public class TraineeController {
 		this.service = service;
 	}
 
-	//Create a trainee- signing up
-	@PostMapping("/trainee/create")
+	@PostMapping("/create")
 	public ResponseEntity<Trainee> createTrainee(@RequestBody Trainee trainee) {
 		return new ResponseEntity<Trainee>(this.service.createTrainee(trainee), HttpStatus.CREATED);
 	}
-	//Get trainee name when signing in
-	@GetMapping("/trainee/getAll")
-	public ResponseEntity<List<Trainee>> getTrainee() {
-		return ResponseEntity.ok(this.service.getTrainee());
+
+	@GetMapping("/getAll")
+	public ResponseEntity<List<Trainee>> getTrainees() {
+		return ResponseEntity.ok(this.service.getTrainees());
+	}
+	
+	@GetMapping("/findById")
+	public ResponseEntity<Trainee> getTraineeById(Long traineeId) {
+		return ResponseEntity.ok(this.service.getTraineeById(traineeId));
+	}
+	
+	@GetMapping("/findByCohort/{cohort}")
+	public ResponseEntity<List<Trainee>> findTraineeByCohort(@PathVariable String cohort) {
+		return ResponseEntity.ok(this.service.findTraineeByCohort(cohort));
 	}
 
-	//@PutMapping("/trainee/update")
-	//public ResponseEntity<Trainee> updateTicket(@RequestBody Trainee trainee, @PathParam("id") Long id) {
+	//@PutMapping("/update")
+	//public ResponseEntity<Trainee> updateTicket(@RequestBody Trainee trainee, @PathParam("id") Long traineeId) {
 	//	return new ResponseEntity<Trainee>(this.service.updateTrainee(trainee, id), HttpStatus.ACCEPTED);
 	//}
 

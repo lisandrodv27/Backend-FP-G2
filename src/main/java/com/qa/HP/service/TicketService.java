@@ -25,18 +25,22 @@ public class TicketService {
 	public List<Ticket> getTicket() {
 		return this.repo.findAll();
 	}
+	
+	public List<Ticket> findTicketbyTopic(String topic) {
+		return this.repo.findByTopic(topic);
+	}
 
 	public Ticket createTicket(Ticket ticket) {
 		return this.repo.save(ticket);
 	}
 
-	public boolean deleteTicket(Long id) {
-		this.repo.deleteById(id);
-		return !this.repo.existsById(id);
+	public boolean deleteTicket(Long ticketId) {
+		this.repo.deleteById(ticketId);
+		return !this.repo.existsById(ticketId);
 	}
 
-	public Ticket updateTicket(Ticket ticket, Long id) {
-		Optional<Ticket> optTicket = this.repo.findById(id);
+	public Ticket updateTicket(Ticket ticket, Long ticketId) {
+		Optional<Ticket> optTicket = this.repo.findById(ticketId);
 		Ticket oldTicket = optTicket.orElseThrow(() -> new TicketNotFoundException());
 
 		oldTicket.setTitle(ticket.getTitle());

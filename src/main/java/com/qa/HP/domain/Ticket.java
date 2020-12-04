@@ -10,9 +10,8 @@ public class Ticket {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long ticketId;
 
-	private int ticketID;
 	private String title;
 	private String issue;
 	private String topic;
@@ -27,9 +26,8 @@ public class Ticket {
 		super();
 	}
 
-	public Ticket(int ticketID, String title, String issue, String topic, String submitDate, int urgency, String status, int traineeID, int trainerID) {
+	public Ticket(String title, String issue, String topic, String submitDate, int urgency, String status, int traineeID, int trainerID) {
 		super();
-		this.ticketID = ticketID;
 		this.title = title;
 		this.issue = issue;
 		this.topic = topic;
@@ -40,22 +38,14 @@ public class Ticket {
 		this.trainerID = trainerID;
 	}
 	
-	public Long getId() {
-		return id;
+	public Long getTicketId() {
+		return ticketId;
 	}
 	
-	public void setId(Long id) {
-		this.id = id;
+	public void setTicketId(Long id) {
+		this.ticketId = ticketId;
 	}
 	
-	public int getTicketID() {
-		return ticketID;
-	}
-
-	public void setTicketID(int ticketID) {
-		this.ticketID = ticketID;
-	}
-
 	public String getTitle() {
 		return title;
 	}

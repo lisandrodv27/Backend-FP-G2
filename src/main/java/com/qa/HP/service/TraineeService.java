@@ -3,11 +3,14 @@ package com.qa.HP.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.qa.HP.domain.TraineeRepo;
+import com.qa.HP.domain.Trainer;
+import com.qa.HP.domain.Ticket;
 import com.qa.HP.domain.Trainee;
-import com.qa.HP.domain.TraineeRepo;
 
+@Service
 public class TraineeService {
 	
 	@Autowired
@@ -18,8 +21,16 @@ public class TraineeService {
 		this.repo = repo;
 	}
 
-	public List<Trainee> getTrainee() {
+	public List<Trainee> getTrainees() {
 		return this.repo.findAll();
+	}
+	
+	public List<Trainee> findTraineeByCohort(String cohort) {
+		return this.repo.findByCohort(cohort);
+	}
+	
+	public Trainee getTraineeById(Long traineeId) {
+		return this.repo.findById(traineeId).get();
 	}
 
 	public Trainee createTrainee(Trainee trainee) {
@@ -27,14 +38,14 @@ public class TraineeService {
 	}
 
 //delete trainee
- // public boolean deleteTrainee(Long id) {
-	//	this.repository.deleteById(id);
-	//	return !this.repository.existsById(id);
+ // public boolean deleteTrainee(Long traineeId) {
+	//	this.repository.deleteById(traineeId);
+	//	return !this.repository.existsById(traineeId);
 	//}
 
 // update trainee
-//	public Trainee updateTrainee(Trainee trainee, Long id) {
-//		Optional<Trainee> optTrainee = this.repository.findById(id);
+//	public Trainee updateTrainee(Trainee trainee, Long traineeId) {
+//		Optional<Trainee> optTrainee = this.repository.findById(traineeId);
 //		Trainee oldTrainee = optTrainee.orElseThrow(() -> new TraineeNotFoundException());
 
 	//	oldTrainee.setTraineeID(trainee.getTraineeID());
