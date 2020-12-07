@@ -42,7 +42,7 @@ public class Trainer {
 		return trainerId;
 	}
 
-	public void setId(Long id) {
+	public void setTrainerId(Long trainerId) {
 		this.trainerId = trainerId;
 	}
 	

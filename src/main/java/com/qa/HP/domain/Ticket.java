@@ -42,7 +42,7 @@ public class Ticket {
 		return ticketId;
 	}
 	
-	public void setTicketId(Long id) {
+	public void setTicketId(Long ticketId) {
 		this.ticketId = ticketId;
 	}
 	

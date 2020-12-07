@@ -44,7 +44,7 @@ public class TicketController {
 		return ResponseEntity.ok(this.service.findTicketByTopic(topic));
 	}
 	
-	@GetMapping("/findByTopic/{traineeId}")
+	@GetMapping("/findByTrainee/{traineeId}")
 	public ResponseEntity<List<Ticket>> findTicketByTrainee(@PathVariable Long traineeId) {
 		return ResponseEntity.ok(this.service.findTicketByTrainee(traineeId));
 	}
