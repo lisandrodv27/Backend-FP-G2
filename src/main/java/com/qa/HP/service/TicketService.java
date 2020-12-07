@@ -26,8 +26,12 @@ public class TicketService {
 		return this.repo.findAll();
 	}
 	
-	public List<Ticket> findTicketbyTopic(String topic) {
+	public List<Ticket> findTicketByTopic(String topic) {
 		return this.repo.findByTopic(topic);
+	}
+	
+	public List<Ticket> findTicketByTrainee(Long traineeId) {
+		return this.repo.findByTraineeId(traineeId);
 	}
 
 	public Ticket createTicket(Ticket ticket) {
@@ -49,8 +53,8 @@ public class TicketService {
 		oldTicket.setSubmitDate(ticket.getSubmitDate());
 		oldTicket.setUrgency(ticket.getUrgency());
 		oldTicket.setStatus(ticket.getStatus());
-		oldTicket.setTraineeID(ticket.getTraineeID());
-		oldTicket.setTrainerID(ticket.getTrainerID());
+		oldTicket.setTraineeId(ticket.getTraineeId());
+		oldTicket.setTrainerId(ticket.getTrainerId());
 
 		Ticket updatedTicket = this.repo.save(oldTicket);
 		return updatedTicket;

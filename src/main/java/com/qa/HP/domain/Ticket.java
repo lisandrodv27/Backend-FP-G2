@@ -18,15 +18,15 @@ public class Ticket {
 	private String submitDate;
 	private int urgency;
 	private String status;
-	private int traineeID;
-	private int trainerID;
+	private int traineeId;
+	private int trainerId;
 	
 
 	public Ticket() {
 		super();
 	}
 
-	public Ticket(String title, String issue, String topic, String submitDate, int urgency, String status, int traineeID, int trainerID) {
+	public Ticket(String title, String issue, String topic, String submitDate, int urgency, String status, int traineeId, int trainerId) {
 		super();
 		this.title = title;
 		this.issue = issue;
@@ -34,8 +34,8 @@ public class Ticket {
 		this.submitDate = submitDate;
 		this.urgency = urgency;
 		this.status = status;
-		this.traineeID = traineeID;
-		this.trainerID = trainerID;
+		this.traineeId = traineeId;
+		this.trainerId = trainerId;
 	}
 	
 	public Long getTicketId() {
@@ -94,20 +94,20 @@ public class Ticket {
 		this.status = status;
 	}
 
-	public int getTraineeID() {
-		return traineeID;
+	public int getTraineeId() {
+		return traineeId;
 	}
 
-	public void setTraineeID(int traineeID) {
-		this.traineeID = traineeID;
+	public void setTraineeId(int traineeId) {
+		this.traineeId = traineeId;
 	}
 
-	public int getTrainerID() {
-		return trainerID;
+	public int getTrainerId() {
+		return trainerId;
 	}
 
-	public void setTrainerID(int trainerID) {
-		this.trainerID = trainerID;
+	public void setTrainerId(int trainerId) {
+		this.trainerId = trainerId;
 	}
 	
 	// needs Hashcode and equals override for testing

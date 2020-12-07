@@ -41,7 +41,12 @@ public class TicketController {
 	
 	@GetMapping("/findByTopic/{topic}")
 	public ResponseEntity<List<Ticket>> findTicketByTopic(@PathVariable String topic) {
-		return ResponseEntity.ok(this.service.findTicketbyTopic(topic));
+		return ResponseEntity.ok(this.service.findTicketByTopic(topic));
+	}
+	
+	@GetMapping("/findByTopic/{traineeId}")
+	public ResponseEntity<List<Ticket>> findTicketByTrainee(@PathVariable Long traineeId) {
+		return ResponseEntity.ok(this.service.findTicketByTrainee(traineeId));
 	}
 
 	@DeleteMapping("/remove/{id}")
