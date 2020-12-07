@@ -17,15 +17,17 @@ public class Trainer {
 	private String lastName;
 	private String password;
 	private String field;
+	private String trainerEmail;
 	
 	
-	public Trainer(String username, String firstName, String lastName, String password, String field) {
+	public Trainer(String username, String firstName, String lastName, String password, String field, String trainerEmail) {
 		super();
 		this.username = username;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.password = password;
 		this.field = field;
+		this.trainerEmail = trainerEmail;
 	}
 	
 	public Trainer() { 
@@ -35,7 +37,7 @@ public class Trainer {
 	
 	@Override
 	public String toString() {
-		return "Trainers [id=" + trainerId + ", username=" + username + "firstName=" + firstName + ", lastName=" + lastName + ", password=" + password + ", field=" + field + "]";
+		return "Trainers [id=" + trainerId + ", username=" + username + "firstName=" + firstName + ", lastName=" + lastName + ", password=" + password + ", field=" + field + ", trainer email=" + trainerEmail + "]";
 	}
 
 	public Long getTrainerId() {
@@ -84,6 +86,14 @@ public class Trainer {
 	
 	public void setField(String field) {
 		this.field= field;
+	}
+	
+	public String getTrainerEmail() {
+		return trainerEmail;
+	}
+	
+	public void setTrainerEmail(String trainerEmail) {
+		this.trainerEmail = trainerEmail;
 	}
 
 }
