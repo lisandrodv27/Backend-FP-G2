@@ -49,6 +49,9 @@ public class TraineeController {
 
 	//@PutMapping("/update")
 	//public ResponseEntity<Trainee> updateTicket(@RequestBody Trainee trainee, @PathParam("id") Long traineeId) {
+
+	//@PutMapping("/update")
+	//public ResponseEntity<Trainee> updateTicket(@RequestBody Trainee trainee, @PathParam("id") Long id) {
 	//	return new ResponseEntity<Trainee>(this.service.updateTrainee(trainee, id), HttpStatus.ACCEPTED);
 	//}
 
